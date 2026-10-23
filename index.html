@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#b95980">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Guía cristiana interactiva para reflexionar sobre amistad, noviazgo, matrimonio y orientación familiar.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Consejos para hija">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon-180.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+  <title>Consejos para hija · v0.2</title>
+</head>
+<body>
+  <div class="site-wrap">
+    <header class="masthead">
+      <div class="toolbar">
+        <div class="menu-root" id="menu-root">
+          <button id="menu-btn" class="icon-button" type="button" aria-label="Abrir menú" title="Menú" aria-expanded="false" aria-controls="app-menu">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+          <div id="app-menu" class="app-menu" hidden>
+            <span class="menu-caption">MI APLICACIÓN</span>
+            <button id="settings-btn" type="button" class="menu-action">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1.2l2-1.5-2-3.4-2.4 1a7 7 0 0 0-2-1.1l-.4-2.6h-4l-.4 2.6a7 7 0 0 0-2 1.1l-2.4-1-2 3.4 2 1.5A7 7 0 0 0 5 12c0 .4 0 .8.1 1.2l-2 1.5 2 3.4 2.4-1a7 7 0 0 0 2 1.1l.4 2.6h4l.4-2.6a7 7 0 0 0 2-1.1l2.4 1 2-3.4-2-1.5c.1-.4.1-.8.1-1.2Z"/></svg>
+              Configuración
+            </button>
+            <button id="about-btn" type="button" class="menu-action">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.1v.3"/></svg>
+              Acerca de esta guía
+            </button>
+          </div>
+        </div>
+        <span class="version-mark">VERSIÓN 0.2</span>
+        <button id="install-btn" class="top-action" type="button" aria-label="Cómo instalar la aplicación">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4"/></svg>
+          <span>Instalar</span>
+        </button>
+      </div>
+      <div class="brand-ornament" aria-hidden="true">❧</div>
+      <h1 id="app-title">Consejos para hija</h1>
+      <p class="subtitle">Amistad, noviazgo y matrimonio</p>
+      <p class="tagline">Una guía para discernir cuándo buscar la orientación de los padres</p>
+      <div class="heart-rule" aria-hidden="true"><span></span><b>♥</b><span></span></div>
+    </header>
+
+    <main>
+      <section class="glass-card chart-card" aria-labelledby="chart-title">
+        <div class="section-heading">
+          <div class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="6" width="4" height="15" rx="1"/><rect x="17" y="2" width="4" height="19" rx="1"/></svg></div>
+          <div>
+            <h2 id="chart-title">Guía según la etapa de la relación</h2>
+            <p class="muted small">Toca un punto de la gráfica o desplaza el selector.</p>
+          </div>
+        </div>
+        <div class="graph-shell">
+          <svg id="relationship-chart" viewBox="0 0 1020 360" role="img" aria-label="Gráfica de ocho etapas y nivel sugerido de búsqueda de orientación de los padres"></svg>
+        </div>
+        <p class="mobile-chart-hint">Desliza la gráfica horizontalmente para explorar las etapas.</p>
+        <div class="graph-footnote"><span class="legend-swatch"></span> Orientación familiar sugerida · Escala ilustrativa de 1 a 5</div>
+        <div class="stage-select-box">
+          <div class="slider-heading"><label for="stage-range">Selecciona una etapa</label><output id="level-output" for="stage-range">4/5</output></div>
+          <input type="range" id="stage-range" min="0" max="7" step="1" value="5" aria-label="Etapa de la relación">
+          <div class="stage-buttons-viewport"><div id="stage-buttons" class="stage-buttons" role="group" aria-label="Seleccionar etapa"></div></div>
+        </div>
+      </section>
+
+      <section class="advice-section" aria-labelledby="stage-title">
+        <div class="stage-info">
+          <div class="stage-heading-copy">
+            <span class="eyebrow">ETAPA SELECCIONADA</span>
+            <h2 id="stage-title">Novios</h2>
+            <p id="stage-summary">Una relación que requiere conversación sincera y consejo prudente.</p>
+          </div>
+          <span id="score-badge" class="score-badge">4/5 · Orientación alta</span>
+        </div>
+        <nav id="topic-tabs" class="topic-tabs" role="tablist" aria-label="Paneles de orientación">
+          <button id="tab-bible" class="topic-tab tab-bible active" type="button" role="tab" aria-selected="true" aria-controls="bible-card" tabindex="0" data-panel="bible-card">
+            <span class="tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5.5C9 3.5 5.5 3 2.5 4v14c3-1 6.5-.5 9.5 1.5m0-14c3-2 6.5-2.5 9.5-1.5v14c-3-1-6.5-.5-9.5 1.5m0-14v14"/></svg></span><span>Consejo bíblico</span>
+          </button>
+          <button id="tab-egw" class="topic-tab tab-egw" type="button" role="tab" aria-selected="false" aria-controls="egw-card" tabindex="-1" data-panel="egw-card">
+            <span class="tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.5 3.5c-9 .2-15 5.5-15 13.2 6.9 1 13-4.2 15-13.2ZM3 21c4-5.7 8-9.2 13.2-11.6"/></svg></span><span>Consejo de EGW</span>
+          </button>
+          <button id="tab-reflection" class="topic-tab tab-reflection" type="button" role="tab" aria-selected="false" aria-controls="reflection-card" tabindex="-1" data-panel="reflection-card">
+            <span class="tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 11.2c0 4.8-4 8.2-9 8.2a11 11 0 0 1-4-.7L3 21v-4.5A8.1 8.1 0 0 1 2 12c0-4.7 4-8.3 9-8.3s9 3.6 9 7.5Z"/><path d="M7 11.5h8M7 14.5h5"/></svg></span><span>Reflexión</span>
+          </button>
+          <button id="tab-alerts" class="topic-tab tab-alerts" type="button" role="tab" aria-selected="false" aria-controls="alerts-card" tabindex="-1" data-panel="alerts-card">
+            <span class="tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 10 18H2L12 3Z"/><path d="M12 9v5m0 3v.3"/></svg></span><span>Puntos de alerta</span>
+          </button>
+        </nav>
+        <div class="advice-panels">
+          <article class="content-card advice-panel bible-panel" id="bible-card" role="tabpanel" aria-labelledby="tab-bible" tabindex="0">
+            <div class="content-card-head"><span class="round-icon panel-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5.5C9 3.5 5.5 3 2.5 4v14c3-1 6.5-.5 9.5 1.5m0-14c3-2 6.5-2.5 9.5-1.5v14c-3-1-6.5-.5-9.5 1.5m0-14v14"/></svg></span><div><span class="eyebrow">CONSEJO BÍBLICO · NVI</span><h3 id="bible-heading">Proverbios 15:22</h3></div></div>
+            <p id="bible-text" class="teaching-text">Cuando falta el consejo, fracasan los planes; cuando abunda el consejo, prosperan.</p>
+            <p id="bible-type" class="source-context">Cita textual breve · Nueva Versión Internacional (NVI)</p>
+            <a id="bible-link" class="source-link" href="https://www.biblegateway.com/passage/?search=Proverbios+15%3A22&amp;version=NVI" target="_blank" rel="noopener noreferrer">Leer el pasaje NVI <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="content-card advice-panel egw-panel" id="egw-card" role="tabpanel" aria-labelledby="tab-egw" tabindex="0" hidden>
+            <div class="content-card-head"><span class="round-icon panel-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.5 3.5c-9 .2-15 5.5-15 13.2 6.9 1 13-4.2 15-13.2ZM3 21c4-5.7 8-9.2 13.2-11.6"/></svg></span><div><span class="eyebrow">CONSEJO DE ELENA G. DE WHITE</span><h3 id="egw-heading">Cuando se necesitan consejos</h3></div></div>
+            <p id="egw-text" class="teaching-text">Antes de una decisión tan importante, escucha consejos sensatos y estudia las Escrituras sin dejarte conducir solo por la emoción.</p>
+            <p class="source-context">Síntesis didáctica, no cita textual.</p>
+            <div class="citation-line"><span aria-hidden="true">◈</span> <span id="egw-citation">Elena G. de White, <em>El hogar cristiano</em>, cap. 10, HC 60.1–2.</span></div>
+            <a id="egw-link" class="source-link" href="https://m.egwwritings.org/es/book/177.333" target="_blank" rel="noopener noreferrer">Consultar el texto original <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="content-card advice-panel reflection-panel" id="reflection-card" role="tabpanel" aria-labelledby="tab-reflection" tabindex="0" hidden>
+            <div class="content-card-head"><span class="round-icon panel-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 11.2c0 4.8-4 8.2-9 8.2a11 11 0 0 1-4-.7L3 21v-4.5A8.1 8.1 0 0 1 2 12c0-4.7 4-8.3 9-8.3s9 3.6 9 7.5Z"/><path d="M7 11.5h8M7 14.5h5"/></svg></span><div><span class="eyebrow">PARA PENSAR Y CONVERSAR</span><h3 id="reflection-heading">Preguntas para reflexionar</h3></div></div>
+            <p class="muted small" id="question-count">Mostrando 4 preguntas de un banco de 8.</p>
+            <ol id="question-list" class="questions-list"></ol>
+            <button id="new-questions" class="subtle-button" type="button"><span aria-hidden="true">↻</span> Mostrar otras preguntas</button>
+          </article>
+          <article class="content-card advice-panel alerts-panel" id="alerts-card" role="tabpanel" aria-labelledby="tab-alerts" tabindex="0" hidden>
+            <div class="content-card-head"><span class="round-icon panel-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 10 18H2L12 3Z"/><path d="M12 9v5m0 3v.3"/></svg></span><div><span class="eyebrow">OBSERVA CON PRUDENCIA</span><h3 id="alerts-heading">Puntos de alerta</h3></div></div>
+            <ul id="alert-list" class="alert-list"></ul>
+            <p class="alert-note">Una señal de alerta invita a reflexionar, dialogar y buscar apoyo seguro; no permite juzgar automáticamente la fe de otra persona.</p>
+          </article>
+        </div>
+        <p class="ethics-note"><strong>Nota:</strong> Los valores de la gráfica son orientativos, no cifras prescritas por la Biblia ni por Elena G. de White. Buscar consejo no significa renunciar al discernimiento personal. Si existe violencia, control o abuso, conviene acudir a una persona adulta confiable o ayuda especializada, aunque no sea un familiar.</p>
+      </section>
+    </main>
+    <footer class="site-footer"><span>Consejos para hija · v0.2</span><span id="offline-state" aria-live="polite">Contenido disponible en esta página</span></footer>
+  </div>
+
+  <dialog id="settings-dialog" class="info-dialog settings-dialog" aria-labelledby="settings-title">
+    <form id="settings-form" novalidate>
+      <button id="settings-close" type="button" class="dialog-close" aria-label="Cerrar">×</button>
+      <h2 id="settings-title">Configuración personal</h2>
+      <p class="settings-description">Personaliza el título de la guía. Los datos permanecen solamente en este navegador; no se envían a ningún servidor.</p>
+      <label for="user-first" class="field-label">Nombre o nombre preferido</label>
+      <input id="user-first" name="firstName" type="text" autocomplete="given-name" maxlength="40" placeholder="Ejemplo: Sofía" class="text-input">
+      <label for="user-last" class="field-label">Apellidos <span>(opcional)</span></label>
+      <input id="user-last" name="lastName" type="text" autocomplete="family-name" maxlength="65" placeholder="Apellidos" class="text-input">
+      <div class="name-preview" aria-live="polite"><span>Así aparecerá el título:</span><strong id="name-preview">Consejos para hija</strong></div>
+      <p class="muted small">En el título se utiliza solamente el nombre; los apellidos se conservan como dato opcional en la configuración.</p>
+      <div class="settings-actions">
+        <button type="button" id="reset-profile" class="secondary-button">Borrar datos</button>
+        <button type="submit" class="primary-button">Guardar cambios</button>
+      </div>
+      <p id="settings-feedback" class="settings-feedback" role="status" aria-live="polite"></p>
+    </form>
+  </dialog>
+  <dialog id="info-dialog" class="info-dialog" aria-labelledby="dialog-title">
+    <form method="dialog"><button type="submit" class="dialog-close" aria-label="Cerrar">×</button></form>
+    <h2 id="dialog-title">Acerca de esta guía</h2>
+    <p>Esta aplicación presenta preguntas y recomendaciones de estudio para conversar con una hija acerca de amistades, noviazgo y matrimonio, desde una perspectiva cristiana adventista.</p>
+    <p>Las enseñanzas de Elena G. de White se resumen mediante <strong>paráfrasis identificadas</strong> y se enlazan a la fuente original. La Biblia consultada es la <strong>Nueva Versión Internacional (NVI)</strong>. Los enlaces externos requieren conexión.</p>
+    <p>La escala de acompañamiento representa la <strong>conveniencia de que la hija busque orientación</strong>, no el grado de control que deban ejercer sus padres. La edad, la madurez, la seguridad y el contexto personal siempre importan.</p>
+    <div class="dialog-sources"><a href="https://m.egwwritings.org/es/book/177/toc" target="_blank" rel="noopener noreferrer">El hogar cristiano ↗</a><a href="https://m.egwwritings.org/es/book/1769/toc" target="_blank" rel="noopener noreferrer">Mensajes para los jóvenes ↗</a><a href="https://www.biblegateway.com/versions/Nueva-Version-Internacional-Biblia-NVI/" target="_blank" rel="noopener noreferrer">Biblia NVI ↗</a></div>
+  </dialog>
+  <dialog id="install-dialog" class="info-dialog" aria-labelledby="install-title">
+    <form method="dialog"><button type="submit" class="dialog-close" aria-label="Cerrar">×</button></form>
+    <h2 id="install-title">Instalar en la tableta</h2>
+    <p><strong>Android (Chrome):</strong> abre la dirección HTTPS donde esté publicada la aplicación y selecciona el menú ⋮ → <em>Instalar aplicación</em> o <em>Agregar a pantalla de inicio</em>.</p>
+    <p><strong>iPad (Safari):</strong> abre la aplicación desde HTTPS, toca <em>Compartir</em> → <em>Agregar a pantalla de inicio</em>.</p>
+    <p>Tras abrirla en línea al menos una vez, sus pantallas y consejos quedarán disponibles sin conexión. Los enlaces a los libros y la Biblia necesitan Internet.</p>
+    <p class="muted small">Abrir directamente index.html desde archivos permite consultar la versión web, pero no instalarla como PWA. Consulta el archivo de instrucciones incluido en el paquete.</p>
+  </dialog>
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>

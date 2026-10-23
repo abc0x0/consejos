@@ -1,0 +1,19 @@
+{
+  "id": "./",
+  "name": "Consejos para hija",
+  "short_name": "Consejos",
+  "description": "Orientación cristiana para reflexionar sobre amistad, noviazgo y matrimonio.",
+  "lang": "es-MX",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
+  "theme_color": "#b95980",
+  "background_color": "#fff5f7",
+  "icons": [
+    {"src":"assets/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
+    {"src":"assets/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}
